@@ -1,0 +1,7 @@
+{
+  "name": "appReq",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
