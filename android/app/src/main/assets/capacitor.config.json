@@ -1,6 +1,6 @@
 {
   "appId": "io.insti.atendimento",
-  "appName": "Atendimento",
+  "appName": "AutomacaoMateriais",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
