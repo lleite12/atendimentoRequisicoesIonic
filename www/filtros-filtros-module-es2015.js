@@ -128,8 +128,9 @@ let FiltrosPage = class FiltrosPage {
     constructor(navCtrl) {
         this.navCtrl = navCtrl;
         var date = new Date();
-        this.dt_ini = date.getDate() - 30;
-        this.dt_fim = date.getDate();
+        date.setDate(date.getDate() - 30);
+        this.dt_ini = date.toISOString();
+        this.dt_fim = new Date().toISOString();
         this.doc_ini = 0;
         this.doc_fim = 99999999;
         this.req_ini = "";
