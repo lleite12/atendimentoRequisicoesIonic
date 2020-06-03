@@ -228,23 +228,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, FiltrosPage);
 
         this.navCtrl = navCtrl;
-        this.dt_ini = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getDtIni();
-        this.dt_fim = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getDtFim();
-        this.doc_ini = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getDocIni();
-        this.doc_fim = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getDocFim();
-        this.req_ini = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getReqIni();
-        this.req_fim = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getReqFim();
-        this.tipo = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getTipo();
+        var date = new Date();
+        this.dt_ini = date.getDate() - 30;
+        this.dt_fim = date.getDate();
+        this.doc_ini = 0;
+        this.doc_fim = 99999999;
+        this.req_ini = "";
+        this.req_fim = "ZZZZZZZZZZZZ";
+        this.tipo = "1";
         this.estabel = _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].getEstabel();
       }
 
       _createClass(FiltrosPage, [{
         key: "filtrar",
         value: function filtrar() {
-          /* if (this.estabel == "" || this.estabel == null){
-              
-             return;
-           }*/
           _app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"].setData(this.dt_ini, this.dt_fim, this.doc_ini, this.doc_fim, this.req_ini, this.req_fim, this.tipo);
 
           this.navCtrl.navigateForward("consReq");

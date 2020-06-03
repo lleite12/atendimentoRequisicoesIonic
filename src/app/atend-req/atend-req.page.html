@@ -73,7 +73,7 @@
           <td>{{s["lote"]}}</td>
           <td>{{s["qtd-disp"]}}</td>
           <td>
-            <ion-input type="number" [(ngModel)]="s['qtd-atend']"></ion-input>
+            <ion-input type="number" min=0 [(ngModel)]="s['qtd-atend']"></ion-input>
           </td>
         </tr>
       </tbody>

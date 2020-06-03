@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-title>Atendimento: {{requisicao[\"cod-doc\"]}}</ion-title>\n  </ion-toolbar>\n\n  <ion-grid fixed>\n    <ion-row>\n      <ion-col size=\"6\"><b>Req:</b> {{requisicao[\"nome-req\"]}}</ion-col>\n      <ion-col size=\"4\">{{requisicao[\"data-req\"]}}</ion-col>\n      <ion-col size=\"2\"><b>TP:</b> {{requisicao[\"tipo-req\"]}}</ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"9\">\n        <ion-input type=\"text\" (dblclick)=\"scanCode()\" [(ngModel)]=\"item\" placeholder=\"Item\"></ion-input>\n      </ion-col>\n      <ion-col size=\"3\">\n        <ion-button (click)=\"selecionar()\" expand=\"block\" fill=\"clear\" shape=\"round\">\n          Buscar\n        </ion-button>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-header>\n\n<ion-content>\n\n  <div style=\"overflow-x: scroll; overflow-y: scroll; max-height: 50%\">\n    <table id=\"tableItem\" style=\"min-width: 100%;\">\n      <thead>\n        <tr>\n          <th>Item</th>\n          <th>QTD.Tot</th>\n          <th>Atend</th>\n          <th>Local</th>\n          <th>UM</th>\n        <tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let it of itens\" (click)=\"selItem(it)\" [style.background-color]=\"it == regSel ? '#aff7ff':getColorItem(it)\">\n          <td>{{it[\"it-codigo\"]}}</td>\n          <td>{{it[\"requisitada\"]}}</td>\n          <td>{{it[\"atendida\"]}}</td>\n          <td>{{it[\"loc-item\"]}}</td>\n          <td>{{it[\"un\"]}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <br>\n  <div style=\"overflow-x: scroll; overflow-y: scroll; max-height: 27%;\">\n    <table id=\"tableSaldo\" style=\"min-width: 100%;\">\n      <thead>\n        <tr>\n          <th>Depos.</th>\n          <th>Local</th>\n          <th>Lote</th>\n          <th>QTD.Saldo</th>\n          <th>QTD.atender</th>\n        <tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let s of getSaldo(1)\">\n          <td>{{s[\"cod-depos\"]}}</td>\n          <td>{{s[\"cod-localiz\"]}}</td>\n          <td>{{s[\"lote\"]}}</td>\n          <td>{{s[\"qtd-disp\"]}}</td>\n          <td>\n            <ion-input type=\"number\" [(ngModel)]=\"s['qtd-atend']\"></ion-input>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div>\n\n    <ion-card>\n      <ion-card-content>\n        {{desc}}\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-button (click)=\"Atender(1)\" expand=\"block\" shape=\"round\" color=\"warning\">\n            Parcial\n          </ion-button>\n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-button (click)=\"Atender(2)\" expand=\"block\" shape=\"round\" color=\"primary\">\n            Total\n          </ion-button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-title>Atendimento: {{requisicao[\"cod-doc\"]}}</ion-title>\n  </ion-toolbar>\n\n  <ion-grid fixed>\n    <ion-row>\n      <ion-col size=\"6\"><b>Req:</b> {{requisicao[\"nome-req\"]}}</ion-col>\n      <ion-col size=\"4\">{{requisicao[\"data-req\"]}}</ion-col>\n      <ion-col size=\"2\"><b>TP:</b> {{requisicao[\"tipo-req\"]}}</ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col size=\"9\">\n        <ion-input type=\"text\" (dblclick)=\"scanCode()\" [(ngModel)]=\"item\" placeholder=\"Item\"></ion-input>\n      </ion-col>\n      <ion-col size=\"3\">\n        <ion-button (click)=\"selecionar()\" expand=\"block\" fill=\"clear\" shape=\"round\">\n          Buscar\n        </ion-button>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-header>\n\n<ion-content>\n\n  <div style=\"overflow-x: scroll; overflow-y: scroll; max-height: 50%\">\n    <table id=\"tableItem\" style=\"min-width: 100%;\">\n      <thead>\n        <tr>\n          <th>Item</th>\n          <th>QTD.Tot</th>\n          <th>Atend</th>\n          <th>Local</th>\n          <th>UM</th>\n        <tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let it of itens\" (click)=\"selItem(it)\" [style.background-color]=\"it == regSel ? '#aff7ff':getColorItem(it)\">\n          <td>{{it[\"it-codigo\"]}}</td>\n          <td>{{it[\"requisitada\"]}}</td>\n          <td>{{it[\"atendida\"]}}</td>\n          <td>{{it[\"loc-item\"]}}</td>\n          <td>{{it[\"un\"]}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <br>\n  <div style=\"overflow-x: scroll; overflow-y: scroll; max-height: 27%;\">\n    <table id=\"tableSaldo\" style=\"min-width: 100%;\">\n      <thead>\n        <tr>\n          <th>Depos.</th>\n          <th>Local</th>\n          <th>Lote</th>\n          <th>QTD.Saldo</th>\n          <th>QTD.atender</th>\n        <tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let s of getSaldo(1)\">\n          <td>{{s[\"cod-depos\"]}}</td>\n          <td>{{s[\"cod-localiz\"]}}</td>\n          <td>{{s[\"lote\"]}}</td>\n          <td>{{s[\"qtd-disp\"]}}</td>\n          <td>\n            <ion-input type=\"number\" min=0 [(ngModel)]=\"s['qtd-atend']\"></ion-input>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div>\n\n    <ion-card>\n      <ion-card-content>\n        {{desc}}\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-grid fixed>\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-button (click)=\"Atender(1)\" expand=\"block\" shape=\"round\" color=\"warning\">\n            Parcial\n          </ion-button>\n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-button (click)=\"Atender(2)\" expand=\"block\" shape=\"round\" color=\"primary\">\n            Total\n          </ion-button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>");
 
 /***/ }),
 
@@ -143,20 +143,8 @@ let AtendReqPage = class AtendReqPage {
         this.headers = new Headers({ "Content-Type": "application/x-www-form-urlencoded" });
         this.token = null;
         this.fazendosinc = null;
-        this.itens = [
-        /*{ "nr-doc": '190032', "it-codigo": 'teste1', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste1" },
-        { "nr-doc": '190032', "it-codigo": 'teste2', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste2" },
-        { "nr-doc": '190032', "it-codigo": 'teste3', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste3" },
-        { "nr-doc": '190032', "it-codigo": 'teste4', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste4" },
-        { "nr-doc": '190032', "it-codigo": 'teste5', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste5" },
-        { "nr-doc": '190032', "it-codigo": 'teste6', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste6" }*/
-        ];
-        this.saldos = [
-        /* { "it-codigo": 'teste1', local: 'xs-tfr', lote: "12345", saldo: 50, qtd: 0 },
-         { "it-codigo": 'teste1', local: 'xs-hfr', lote: "12345", saldo: 40, qtd: 0 },
-         { "it-codigo": 'teste1', local: 'xs-hfk', lote: "12345", saldo: 50, qtd: 0 },
-         { "it-codigo": 'teste2', local: 'xs-tfr', lote: "12345", saldo: 1000, qtd: 0 }*/
-        ];
+        this.itens = [];
+        this.saldos = [];
         this.requisicao = _app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"].getReg();
         this.testBaseURL = _app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"].getBase();
         this.usuario = _app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"].getUsuar();
@@ -244,7 +232,7 @@ let AtendReqPage = class AtendReqPage {
                 }
             }
             if (qtd >= (it["requisitada"] - it["atendida"]))
-                return "green";
+                return "rgb(105, 221, 111)";
             else
                 return "yellow";
         }
@@ -280,6 +268,7 @@ let AtendReqPage = class AtendReqPage {
     Atender(tipo) {
         this.atender = [];
         var qtd;
+        var l_ok = true;
         if (this.regSel == null) {
             this.erroAlert("Nenhum item selecionado!", "Favor selecionar um item antes de fazer o atendimento!");
             return;
@@ -292,6 +281,10 @@ let AtendReqPage = class AtendReqPage {
                         qtd = 0;
                         for (var i in this.atender) {
                             if (this.atender.hasOwnProperty(i)) {
+                                if (this.atender[i]["qtd-disp"] < this.atender[i]["qtd-atend"]) {
+                                    this.erroAlert("Erro!", "Quantidade informada, maior que a quantidade disponivel no saldo!");
+                                    return;
+                                }
                                 qtd = qtd + this.atender[i]["qtd-atend"];
                             }
                         }

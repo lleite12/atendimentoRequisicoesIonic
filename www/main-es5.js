@@ -1238,13 +1238,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return AppModule;
     }();
 
-    AppModule.dtIni = "2019-01-01";
-    AppModule.dtFim = "2020-01-01";
-    AppModule.docIni = 0;
-    AppModule.docFim = 99999999;
-    AppModule.reqIni = "";
-    AppModule.reqFim = "ZZZZZZZZZZZ";
-    AppModule.tipo = "1";
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
       entryComponents: [],

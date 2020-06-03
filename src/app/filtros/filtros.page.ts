@@ -10,8 +10,8 @@ import { AppModule } from '../app.module';
 })
 export class FiltrosPage implements OnInit {
 
-  dt_ini: string;
-  dt_fim: string;
+  dt_ini: any;
+  dt_fim: any;
   doc_ini: number;
   doc_fim: number;
   req_ini: string;
@@ -21,25 +21,23 @@ export class FiltrosPage implements OnInit {
 
   constructor(public navCtrl: NavController) {     
 
-    this.dt_ini  = AppModule.getDtIni();
-    this.dt_fim  = AppModule.getDtFim();
-    this.doc_ini = AppModule.getDocIni();
-    this.doc_fim = AppModule.getDocFim();    
-    this.req_ini = AppModule.getReqIni();
-    this.req_fim = AppModule.getReqFim();
-    this.tipo    = AppModule.getTipo();
+    var date = new Date();
+
+    date.setDate(date.getDate() - 30);
+
+    this.dt_ini  = date.toISOString();
+    this.dt_fim  = new Date().toISOString();
+    this.doc_ini = 0;
+    this.doc_fim = 99999999;    
+    this.req_ini = "";
+    this.req_fim = "ZZZZZZZZZZZZ";
+    this.tipo    = "1";
     this.estabel = AppModule.getEstabel();    
 
   }
   
 
   filtrar(){
-    
-   /* if (this.estabel == "" || this.estabel == null){
-
-
-      return;
-    }*/
     
     AppModule.setData(this.dt_ini, this.dt_fim, this.doc_ini, this.doc_fim, this.req_ini, this.req_fim, this.tipo);
 

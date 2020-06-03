@@ -264,17 +264,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           "Content-Type": "application/x-www-form-urlencoded"
         });
         this.token = null;
-        this.requisicoes = [
-          /*{ "tipo-req": 'R', "cod-doc": "190032", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "admilson" },
-          { "tipo-req": 'R', "cod-doc": "230032", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Lucas" },
-          { "tipo-req": 'R', "cod-doc": "100993", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-          { "tipo-req": 'R', "cod-doc": "220032", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-          { "tipo-req": 'R', "cod-doc": "110098", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-          { "tipo-req": 'R', "cod-doc": "345556", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-          { "tipo-req": 'R', "cod-doc": "109876", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-          { "tipo-req": 'R', "cod-doc": "190033", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-          { "tipo-req": 'R', "cod-doc": "100843", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" }*/
-        ];
+        this.requisicoes = [];
         this.testBaseURL = _app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"].getBase();
         this.param = "<s11:Envelope xmlns:s11='http://schemas.xmlsoap.org/soap/envelope/'>\n      <s11:Body>\n        <ns1:userLogin xmlns:ns1='http://service.execbo.ws.framework.totvs.com'>\n    <!-- optional -->\n          <arg0>super</arg0>\n        </ns1:userLogin>\n      </s11:Body>\n    </s11:Envelope>"; //this.getDataNative();
         // Options
@@ -313,6 +303,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           if (selecionado == null) this.erroAlert('Registro não encontrado!', 'Registro não encontrado para o documento informado!');
           this.selLinha(selecionado);
+          if (this.regSel != null) this.atender();
         }
       }, {
         key: "erroAlert",

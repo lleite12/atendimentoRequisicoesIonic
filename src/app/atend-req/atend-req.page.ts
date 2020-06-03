@@ -39,23 +39,10 @@ export class AtendReqPage implements OnInit {
 
   scannedData: {};
 
-  itens: any[] = [
-    /*{ "nr-doc": '190032', "it-codigo": 'teste1', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste1" },
-    { "nr-doc": '190032', "it-codigo": 'teste2', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste2" },
-    { "nr-doc": '190032', "it-codigo": 'teste3', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste3" },
-    { "nr-doc": '190032', "it-codigo": 'teste4', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste4" },
-    { "nr-doc": '190032', "it-codigo": 'teste5', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste5" },
-    { "nr-doc": '190032', "it-codigo": 'teste6', requisitada: 100, atendida: 20, "loc-item": "xs-td", un: "PC", descricao: "teste6" }*/
-  ];
+  itens: any[] = [];
 
 
-  saldos: any[] = [
-   /* { "it-codigo": 'teste1', local: 'xs-tfr', lote: "12345", saldo: 50, qtd: 0 },
-    { "it-codigo": 'teste1', local: 'xs-hfr', lote: "12345", saldo: 40, qtd: 0 },
-    { "it-codigo": 'teste1', local: 'xs-hfk', lote: "12345", saldo: 50, qtd: 0 },
-    { "it-codigo": 'teste2', local: 'xs-tfr', lote: "12345", saldo: 1000, qtd: 0 }*/
-
-  ];
+  saldos: any[] = [];
 
   atender: any[];
 
@@ -177,7 +164,7 @@ export class AtendReqPage implements OnInit {
       }
 
       if (qtd >= (it["requisitada"] - it["atendida"]))
-        return "green";
+        return "rgb(105, 221, 111)";
       else 
         return "yellow";            
 
@@ -230,6 +217,7 @@ export class AtendReqPage implements OnInit {
     this.atender = [];
 
     var qtd;
+    var l_ok = true;
 
     if (this.regSel == null) {
 
@@ -252,6 +240,11 @@ export class AtendReqPage implements OnInit {
             for (var i in this.atender) {
               if (this.atender.hasOwnProperty(i)) {
                     
+                if(this.atender[i]["qtd-disp"] < this.atender[i]["qtd-atend"]){
+                  this.erroAlert("Erro!", "Quantidade informada, maior que a quantidade disponivel no saldo!");
+                  return;
+                }
+
                 qtd = qtd + this.atender[i]["qtd-atend"];
 
               }
@@ -264,7 +257,7 @@ export class AtendReqPage implements OnInit {
               console.log(this.atender);
             }
             else
-            this.erroAlert("Erro!", "Quantidade informada, maior que a quantidade necessária para o atendimento!");
+              this.erroAlert("Erro!", "Quantidade informada, maior que a quantidade necessária para o atendimento!");
 
           }
           else {

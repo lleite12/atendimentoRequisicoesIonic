@@ -37,14 +37,14 @@ export class AppModule {
 
   database: SQLiteObject;
 
-  private static dtIni: string = "2019-01-01";
-  private static dtFim: string =  "2020-01-01";
+  private static dtIni: any;
+  private static dtFim: any;
 
-  private static docIni: number = 0;
-  private static docFim: number = 99999999;
-  private static reqIni: string = "";
-  private static reqFim: string = "ZZZZZZZZZZZ";
-  private static tipo: string = "1";
+  private static docIni: number;
+  private static docFim: number;
+  private static reqIni: string;
+  private static reqFim: string;
+  private static tipo: string;
 
   private static baseHttp: any;
   private static estabel: any;

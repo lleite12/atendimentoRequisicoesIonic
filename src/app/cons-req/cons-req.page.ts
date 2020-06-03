@@ -32,18 +32,7 @@ export class ConsReqPage implements OnInit {
   retorno: any;
   VALUE1: any;
 
-  requisicoes: any[] = [
-    /*{ "tipo-req": 'R', "cod-doc": "190032", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "admilson" },
-    { "tipo-req": 'R', "cod-doc": "230032", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Lucas" },
-    { "tipo-req": 'R', "cod-doc": "100993", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-    { "tipo-req": 'R', "cod-doc": "220032", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-    { "tipo-req": 'R', "cod-doc": "110098", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-    { "tipo-req": 'R', "cod-doc": "345556", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-    { "tipo-req": 'R', "cod-doc": "109876", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-    { "tipo-req": 'R', "cod-doc": "190033", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" },
-    { "tipo-req": 'R', "cod-doc": "100843", "cod-estabel": "1", "data-req": "01/01/2020", "nome-req": "Josue" }*/
-
-  ];
+  requisicoes: any[] = [];
 
   regSel: any;
   scannedData: {};
@@ -112,6 +101,9 @@ export class ConsReqPage implements OnInit {
       this.erroAlert('Registro não encontrado!','Registro não encontrado para o documento informado!');
 
     this.selLinha(selecionado);
+
+    if(this.regSel != null)
+      this.atender();
 
   };
 
