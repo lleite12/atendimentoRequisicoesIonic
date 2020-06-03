@@ -1,4 +1,4 @@
-//Desenvolvido por: lucas Leite - INSTI
+//Desenvolvido por: lucas Leite - INSTI oiiiiiiiii
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
