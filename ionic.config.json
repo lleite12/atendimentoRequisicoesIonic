@@ -1,7 +1,8 @@
 {
   "name": "appReq",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

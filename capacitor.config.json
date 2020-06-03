@@ -1,8 +1,11 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "appReq",
+  "appId": "io.insti.atendimento",
+  "appName": "Atendimento",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
-  "cordova": {}
+  "cordova": {},
+  "server": {    
+    "cleartext": true
+  }
 }

@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Filtros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="floating">Estebelecimento</ion-label>
+    <ion-input type="text" [(ngModel)]="estabel" name="estabel" id="estabel" disabled></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Data Inicial</ion-label>
+    <ion-datetime [(ngModel)]="dt_ini" name="dtIni" id="dtIni"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Data Final</ion-label>
+    <ion-datetime [(ngModel)]="dt_fim" name="dtFim" id="dtFim"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Doc. Inicial</ion-label>
+    <ion-input type="number" [(ngModel)]="doc_ini" name="docIni" id="docIni"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Doc. Final</ion-label>
+    <ion-input type="number" [(ngModel)]="doc_fim" name="docFim" id="docFim"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Requisitante Ini.</ion-label>
+    <ion-input type="text" [(ngModel)]="req_ini" name="reqIni" id="reqIni"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Requisitante Fim</ion-label>
+    <ion-input type="text" [(ngModel)]="req_fim" name="reqFim" id="reqFim"></ion-input>
+  </ion-item>
+
+
+
+
+  <ion-radio-group [(ngModel)]="tipo">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Estoque</ion-label>
+          <ion-radio mode="md" item-left value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Manutenção</ion-label>
+          <ion-radio mode="md" item-left value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Todos</ion-label>
+          <ion-radio mode="md" item-left value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="filtrar()" expand="block" fill="clear" shape="round">
+      Filtrar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

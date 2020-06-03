@@ -1,0 +1,16 @@
+
+ion-content.loginPage {
+    --background: url('/assets/imgs/fundo-azul.jpg') no-repeat 100% 100%;
+}
+
+ion-grid.login-container {
+        border-radius: 10px;
+        opacity: 0.8;
+        width: 80%;        
+        text-align: center;
+        background-color: white;
+}
+ 
+form.login-form{
+    opacity: none!important;
+}

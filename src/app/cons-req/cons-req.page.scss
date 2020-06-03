@@ -1,0 +1,32 @@
+#minhaTabela{
+    margin:0 auto;
+    border:0;
+    box-shadow: 0 5px 30px darkgrey;
+    border-spacing: 0;
+  }
+  
+  #minhaTabela thead th{
+    font-weight: bold;
+    background-color: rgb(37, 132, 187);
+    color:white;
+    
+    padding:5px 10px;
+  }
+  
+  #minhaTabela tr td{
+    width:80%;
+    padding:5px 10px;
+    text-align: center;
+    
+    cursor: pointer; /**importante para não mostrar cursor de texto**/
+  }
+  
+  #minhaTabela tr td:last-child{
+    text-align: right;
+  }
+  
+  /**Cores**/
+  #minhaTabela tr:nth-child(odd){
+    background-color: #eee;
+  }
+

@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Atendimento: {{requisicao["cod-doc"]}}</ion-title>
+  </ion-toolbar>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6"><b>Req:</b> {{requisicao["nome-req"]}}</ion-col>
+      <ion-col size="4">{{requisicao["data-req"]}}</ion-col>
+      <ion-col size="2"><b>TP:</b> {{requisicao["tipo-req"]}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="9">
+        <ion-input type="text" (dblclick)="scanCode()" [(ngModel)]="item" placeholder="Item"></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="selecionar()" expand="block" fill="clear" shape="round">
+          Buscar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+
+  <div style="overflow-x: scroll; overflow-y: scroll; max-height: 50%">
+    <table id="tableItem" style="min-width: 100%;">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>QTD.Tot</th>
+          <th>Atend</th>
+          <th>Local</th>
+          <th>UM</th>
+        <tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let it of itens" (click)="selItem(it)" [style.background-color]="it == regSel ? '#aff7ff':getColorItem(it)">
+          <td>{{it["it-codigo"]}}</td>
+          <td>{{it["requisitada"]}}</td>
+          <td>{{it["atendida"]}}</td>
+          <td>{{it["loc-item"]}}</td>
+          <td>{{it["un"]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div style="overflow-x: scroll; overflow-y: scroll; max-height: 27%;">
+    <table id="tableSaldo" style="min-width: 100%;">
+      <thead>
+        <tr>
+          <th>Depos.</th>
+          <th>Local</th>
+          <th>Lote</th>
+          <th>QTD.Saldo</th>
+          <th>QTD.atender</th>
+        <tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of getSaldo(1)">
+          <td>{{s["cod-depos"]}}</td>
+          <td>{{s["cod-localiz"]}}</td>
+          <td>{{s["lote"]}}</td>
+          <td>{{s["qtd-disp"]}}</td>
+          <td>
+            <ion-input type="number" [(ngModel)]="s['qtd-atend']"></ion-input>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+
+    <ion-card>
+      <ion-card-content>
+        {{desc}}
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="Atender(1)" expand="block" shape="round" color="warning">
+            Parcial
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button (click)="Atender(2)" expand="block" shape="round" color="primary">
+            Total
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
